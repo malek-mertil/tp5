@@ -1,0 +1,19 @@
+<div class="container"> 
+  <div class="card shadow mb-4">
+    <div class="card-body"> 
+       <table class="table table-striped"> 
+           <tr> <th>GameId</th><th>GameName</th> <th>Price</th> <th>Date</th> </tr> 
+           <tbody *ngFor="let store of Storee"> 
+               <tr > 
+                   <td>{{store.idJeux}}</td> 
+                   <td>{{store.nomJeux}}</td> 
+                   <td>{{store.prixJeux}}</td> 
+                   <td>{{store.dateCreation | date:'dd/MM/yyyy'}}</td> 
+                   <td><a class="btn btn-danger" (click)="supprimerstore(store)">Delete</a></td>
+                   <td><a class="btn btn-success" [routerLink]="['/updatstore',store.idJeux]">Modify</a></td>
+                </tr> 
+            </tbody> 
+        </table> 
+    </div> 
+  </div> 
+</div>
