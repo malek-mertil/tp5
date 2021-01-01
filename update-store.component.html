@@ -1,0 +1,29 @@
+<div class="container">
+     <div>
+          <h2>Modify your game :</h2> 
+        </div> 
+        <form > 
+            <div class="col-sm-2 col-md-2 col-lg-2"> 
+                <label >Game ID</label>
+                 <input type="text" [(ngModel)]="currentStore.idJeux" name="idJeux" class="form-control">
+                 </div> 
+                 <div class="col-sm-4 col-md-4 col-lg-4" > 
+                     <label >Game Name</label>
+                      <input type="text"[(ngModel)]= "currentStore.nomJeux" name="nomJeux" class="form-control">
+                     </div> 
+                     <div class="col-sm-2 col-md-2 col-lg-2"> 
+                         <label >Price</label>
+                          <input type="number" [(ngModel)]= "currentStore.prixJeux" name="prixJeux" class="form-control">
+                         </div> 
+                         <div class="col-sm-4 col-md-4 col-lg-4"> 
+                             <label >Date</label>
+                              <input type="date" 
+                              [ngModel]="currentStore.dateCreation | date: 'yyyy-MM-dd'"
+                              (ngModelChange)=" currentStore.dateCreation= $event"
+                               name="currentStore" class="form-control">
+                             </div> 
+                             <div class="mt-2"> 
+                                 <button type="submit" (click)="updateStore()" class="btn btn-success">Modify</button> 
+                                </div> 
+                            </form> 
+                        </div>
